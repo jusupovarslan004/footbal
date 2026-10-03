@@ -1,0 +1,93 @@
+.music-button {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 9999;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    border: 1px solid rgba(120, 255, 145, 0.2);
+    border-radius: 50%;
+
+    background: rgba(2, 12, 6, 0.75);
+    backdrop-filter: blur(12px);
+
+    color: #8aff9b;
+
+    box-shadow:
+            0 0 25px rgba(60, 220, 90, 0.08),
+            inset 0 0 15px rgba(80, 220, 100, 0.04);
+
+    cursor: pointer;
+
+    transition:
+            transform 0.3s ease,
+            border-color 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.08);
+    border-color: rgba(120, 255, 145, 0.5);
+}
+
+.music-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.music-waves {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 14px;
+}
+
+.music-waves i {
+    width: 2px;
+    height: 5px;
+
+    display: block;
+
+    border-radius: 3px;
+    background: #6cff82;
+}
+
+.music-button.is-playing .music-waves i:nth-child(1) {
+    animation: musicWave 0.8s ease-in-out infinite;
+}
+
+.music-button.is-playing .music-waves i:nth-child(2) {
+    animation: musicWave 0.65s ease-in-out infinite 0.1s;
+}
+
+.music-button.is-playing .music-waves i:nth-child(3) {
+    animation: musicWave 0.9s ease-in-out infinite 0.2s;
+}
+
+@keyframes musicWave {
+    0%,
+    100% {
+        height: 4px;
+    }
+
+    50% {
+        height: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .music-button {
+        right: 15px;
+        bottom: 15px;
+
+        width: 42px;
+        height: 42px;
+    }
+}

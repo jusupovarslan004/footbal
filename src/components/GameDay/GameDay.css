@@ -1,0 +1,784 @@
+.game-day {
+    position: relative;
+
+    min-height: 100svh;
+    width: 100%;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+            radial-gradient(
+                    circle at 50% 48%,
+                    rgba(38, 190, 80, 0.18),
+                    transparent 27%
+            ),
+            linear-gradient(
+                    180deg,
+                    #020403 0%,
+                    #071009 60%,
+                    #020503 100%
+            );
+
+    color: #fff;
+}
+
+
+/* =========================================
+   GLOW
+========================================= */
+
+.game-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 48%;
+
+    width: 430px;
+    height: 430px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle,
+                    rgba(55, 210, 95, 0.18),
+                    transparent 68%
+            );
+
+    filter: blur(35px);
+
+    z-index: -5;
+}
+
+
+/* =========================================
+   LIGHTS
+========================================= */
+
+.stadium-light {
+    position: absolute;
+
+    top: -10%;
+
+    width: 35vw;
+    height: 70vh;
+
+    background:
+            linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 0.13),
+                    transparent
+            );
+
+    filter: blur(30px);
+
+    clip-path: polygon(
+            45% 0,
+            55% 0,
+            100% 100%,
+            0 100%
+    );
+
+    z-index: -5;
+}
+
+.game-light-1 {
+    left: -10%;
+    transform: rotate(25deg);
+}
+
+.game-light-2 {
+    right: -10%;
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================
+   STADIUM
+========================================= */
+
+.stadium-background {
+    position: absolute;
+    inset: 0;
+
+    z-index: -4;
+
+    opacity: 0.5;
+}
+
+
+.stadium-stand {
+    position: absolute;
+
+    bottom: 18%;
+
+    width: 32vw;
+    height: 30vh;
+
+    background:
+            repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.035) 0,
+                    rgba(255, 255, 255, 0.035) 3px,
+                    transparent 3px,
+                    transparent 12px
+            );
+
+    filter: blur(1px);
+}
+
+
+.stand-left {
+    left: -5%;
+
+    transform:
+            perspective(500px)
+            rotateY(35deg);
+}
+
+
+.stand-right {
+    right: -5%;
+
+    transform:
+            perspective(500px)
+            rotateY(-35deg);
+}
+
+
+/* Прожекторы */
+
+.stadium-spotlight {
+    position: absolute;
+
+    top: 10%;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    box-shadow:
+            0 0 70px rgba(255, 255, 255, 0.08);
+}
+
+
+.spotlight-left {
+    left: 10%;
+}
+
+
+.spotlight-right {
+    right: 10%;
+}
+
+
+/* =========================================
+   FIELD
+========================================= */
+
+.game-field {
+    position: absolute;
+
+    left: 50%;
+    bottom: -42%;
+
+    width: 125vw;
+    height: 65vh;
+
+    transform:
+            translateX(-50%)
+            perspective(700px)
+            rotateX(64deg);
+
+    background:
+            repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.018) 0,
+                    rgba(255, 255, 255, 0.018) 2px,
+                    transparent 2px,
+                    transparent 80px
+            ),
+            linear-gradient(
+                    180deg,
+                    rgba(18, 105, 45, 0.48),
+                    rgba(2, 30, 12, 0.95)
+            );
+
+    border:
+            1px solid rgba(255, 255, 255, 0.12);
+
+    z-index: -2;
+}
+
+
+.game-field-line {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+            rgba(255, 255, 255, 0.14);
+}
+
+
+.game-field-circle {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 190px;
+    height: 190px;
+
+    transform:
+            translate(-50%, -50%);
+
+    border:
+            2px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.game-top {
+    position: absolute;
+
+    top: 28px;
+    left: 32px;
+    right: 32px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 8px;
+
+    letter-spacing: 0.35em;
+
+    color:
+            rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.game-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(700px, 90vw);
+
+    text-align: center;
+
+    padding:
+            60px 0 90px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.game-label {
+    margin: 0 0 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.45em;
+
+    color:
+            rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.game-title {
+    margin: 0;
+
+    font-family:
+            Arial Black,
+            Arial,
+            sans-serif;
+
+    font-size:
+            clamp(65px, 11vw, 140px);
+
+    font-weight: 900;
+
+    line-height: 0.78;
+
+    letter-spacing: -0.065em;
+}
+
+
+.game-title span {
+    display: block;
+
+    margin-top: 12px;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+            1px rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+.game-line {
+    width: 110px;
+    height: 2px;
+
+    margin:
+            30px auto 28px;
+
+    background: #fff;
+
+    transform-origin: center;
+}
+
+
+/* =========================================
+   TIME
+========================================= */
+
+.game-time {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.game-time span,
+.game-venue > span {
+    font-size: 7px;
+
+    letter-spacing: 0.4em;
+
+    color:
+            rgba(255, 255, 255, 0.38);
+}
+
+
+.game-time strong {
+    font-family:
+            Arial Black,
+            Arial,
+            sans-serif;
+
+    font-size:
+            clamp(65px, 10vw, 115px);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================
+   BALL
+========================================= */
+
+.game-ball {
+    width: 55px;
+    height: 55px;
+
+    margin:
+            25px auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 45px;
+
+    filter:
+            drop-shadow(
+                    0 15px 25px rgba(0, 0, 0, 0.5)
+            );
+}
+
+
+/* =========================================
+   VENUE
+========================================= */
+
+.game-venue h3 {
+    margin:
+            8px 0 0;
+
+    font-size:
+            clamp(26px, 4vw, 42px);
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================
+   ADDRESS
+========================================= */
+
+.game-address {
+    margin:
+            14px 0 0;
+
+    font-size: 13px;
+
+    color:
+            rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.game-button {
+    margin-top: 30px;
+
+    min-width: 220px;
+
+    padding:
+            15px 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border:
+            1px solid rgba(255, 255, 255, 0.2);
+
+    background:
+            rgba(255, 255, 255, 0.05);
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    letter-spacing: 0.22em;
+
+    backdrop-filter: blur(15px);
+
+    transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+}
+
+
+.game-button b {
+    font-size: 16px;
+
+    font-weight: 400;
+}
+
+
+.game-button:hover {
+    background:
+            rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   ROUTE
+========================================= */
+
+.game-route {
+    position: absolute;
+
+    right: 7%;
+    top: 8%;
+
+    width: 280px;
+    height: 84%;
+
+    pointer-events: none;
+
+    opacity: 0.3;
+
+    z-index: -1;
+}
+
+
+.route-line {
+    fill: none;
+
+    stroke:
+            rgba(90, 220, 120, 0.6);
+
+    stroke-width: 1;
+
+    stroke-dasharray: 500;
+
+    stroke-dashoffset: 500;
+
+    stroke-linecap: round;
+}
+
+
+/* =========================================
+   PIN
+========================================= */
+
+.game-pin {
+    position: absolute;
+
+    right: 8%;
+    top: 9%;
+
+    width: 18px;
+    height: 18px;
+
+    z-index: 2;
+}
+
+
+.pin-dot {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+            translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+            0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+
+.pin-pulse {
+    position: absolute;
+
+    inset: 0;
+
+    border:
+            1px solid rgba(100, 230, 130, 0.7);
+
+    border-radius: 50%;
+
+    animation:
+            pinPulse 2s ease-out infinite;
+}
+
+
+@keyframes pinPulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.game-bottom {
+    position: absolute;
+
+    left: 32px;
+    right: 32px;
+    bottom: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 7px;
+
+    letter-spacing: 0.3em;
+
+    color:
+            rgba(255, 255, 255, 0.3);
+}
+
+
+.game-bottom div {
+    display: flex;
+
+    gap: 12px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .game-top {
+        top: 20px;
+
+        left: 18px;
+        right: 18px;
+
+        font-size: 6px;
+    }
+
+
+    .game-content {
+        width: 88vw;
+
+        padding:
+                60px 0 80px;
+    }
+
+
+    .game-label {
+        font-size: 7px;
+
+        letter-spacing: 0.35em;
+    }
+
+
+    .game-title {
+        font-size: 58px;
+    }
+
+
+    .game-title span {
+        margin-top: 8px;
+
+        -webkit-text-stroke:
+                0.8px rgba(255, 255, 255, 0.65);
+    }
+
+
+    .game-line {
+        width: 75px;
+
+        height: 1px;
+
+        margin:
+                24px auto;
+    }
+
+
+    .game-time strong {
+        font-size: 76px;
+    }
+
+
+    .game-ball {
+        width: 45px;
+        height: 45px;
+
+        font-size: 37px;
+
+        margin:
+                20px auto;
+    }
+
+
+    .game-venue h3 {
+        font-size: 27px;
+    }
+
+
+    .game-address {
+        font-size: 11px;
+
+        margin-top: 11px;
+    }
+
+
+    .game-button {
+        min-width: 205px;
+
+        padding:
+                14px 17px;
+
+        font-size: 7px;
+    }
+
+
+    .game-route {
+        right: -5%;
+
+        width: 220px;
+
+        opacity: 0.18;
+    }
+
+
+    .game-pin {
+        right: 4%;
+    }
+
+
+    .game-field {
+        width: 160vw;
+
+        bottom: -25%;
+
+        height: 50vh;
+    }
+
+
+    .game-field-circle {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .game-bottom {
+        left: 18px;
+        right: 18px;
+        bottom: 17px;
+
+        font-size: 5px;
+    }
+}

@@ -1,0 +1,403 @@
+.final-football {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+            radial-gradient(
+                    circle at 50% 42%,
+                    rgba(36, 150, 75, 0.2),
+                    transparent 30%
+            ),
+            linear-gradient(
+                    180deg,
+                    #03130a 0%,
+                    #020b06 55%,
+                    #010704 100%
+            );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f4f8f3;
+    isolation: isolate;
+}
+
+/* glow */
+
+.final-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+            circle,
+            rgba(61, 190, 91, 0.2),
+            transparent 68%
+    );
+
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+/* particles */
+
+.final-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.final-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+
+    background: rgba(130, 255, 155, 0.55);
+    box-shadow: 0 0 12px rgba(90, 255, 120, 0.35);
+}
+
+.final-particle:nth-child(1) {
+    left: 8%;
+    top: 22%;
+}
+
+.final-particle:nth-child(2) {
+    left: 16%;
+    top: 64%;
+}
+
+.final-particle:nth-child(3) {
+    left: 25%;
+    top: 18%;
+}
+
+.final-particle:nth-child(4) {
+    left: 32%;
+    top: 78%;
+}
+
+.final-particle:nth-child(5) {
+    left: 41%;
+    top: 12%;
+}
+
+.final-particle:nth-child(6) {
+    left: 48%;
+    top: 70%;
+}
+
+.final-particle:nth-child(7) {
+    left: 57%;
+    top: 20%;
+}
+
+.final-particle:nth-child(8) {
+    left: 64%;
+    top: 82%;
+}
+
+.final-particle:nth-child(9) {
+    left: 72%;
+    top: 15%;
+}
+
+.final-particle:nth-child(10) {
+    left: 81%;
+    top: 35%;
+}
+
+.final-particle:nth-child(11) {
+    left: 90%;
+    top: 72%;
+}
+
+.final-particle:nth-child(12) {
+    left: 12%;
+    top: 88%;
+}
+
+.final-particle:nth-child(13) {
+    left: 22%;
+    top: 43%;
+}
+
+.final-particle:nth-child(14) {
+    left: 37%;
+    top: 32%;
+}
+
+.final-particle:nth-child(15) {
+    left: 68%;
+    top: 48%;
+}
+
+.final-particle:nth-child(16) {
+    left: 78%;
+    top: 68%;
+}
+
+.final-particle:nth-child(17) {
+    left: 87%;
+    top: 21%;
+}
+
+.final-particle:nth-child(18) {
+    left: 54%;
+    top: 90%;
+}
+
+/* field */
+
+.final-field {
+    position: absolute;
+    left: 50%;
+    bottom: -230px;
+
+    width: 800px;
+    height: 800px;
+
+    transform: translateX(-50%) perspective(700px) rotateX(65deg);
+
+    border: 1px solid rgba(92, 190, 110, 0.12);
+    border-radius: 50%;
+
+    opacity: 0.7;
+}
+
+.final-field-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+
+    transform: translateX(-50%);
+    background: rgba(100, 200, 120, 0.1);
+}
+
+.final-field-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 240px;
+    height: 240px;
+
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(100, 200, 120, 0.13);
+    border-radius: 50%;
+}
+
+/* top */
+
+.final-top {
+    position: absolute;
+    top: 34px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 12px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+
+    color: rgba(220, 240, 224, 0.45);
+}
+
+/* content */
+
+.final-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    text-align: center;
+}
+
+.final-label {
+    margin: 0 0 28px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.32em;
+
+    color: rgba(220, 240, 224, 0.55);
+}
+
+.final-content h2 {
+    margin: 0;
+
+    font-size: clamp(55px, 10vw, 135px);
+    line-height: 0.82;
+    font-weight: 1000;
+    letter-spacing: -0.065em;
+    text-transform: uppercase;
+}
+
+.final-content h2 span {
+    margin-top: 20px;
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+}
+
+/* line */
+
+.final-line {
+    width: min(220px, 45vw);
+    height: 2px;
+
+    margin: 35px auto 30px;
+
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(91, 213, 116, 0.9),
+            transparent
+    );
+
+    transform-origin: center;
+}
+
+/* text */
+
+.final-text {
+    margin: 0;
+
+    font-size: clamp(15px, 2vw, 20px);
+    line-height: 1.8;
+
+    color: rgba(230, 240, 232, 0.7);
+}
+
+/* mark */
+
+.final-mark {
+    width: 70px;
+    height: 70px;
+
+    margin: 38px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(105, 220, 125, 0.25);
+    border-radius: 50%;
+
+    background: rgba(10, 40, 20, 0.45);
+    box-shadow:
+            0 0 40px rgba(57, 190, 82, 0.12),
+            inset 0 0 25px rgba(70, 200, 90, 0.06);
+}
+
+.final-mark span {
+    font-size: 30px;
+}
+
+/* bottom */
+
+.final-bottom {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(90%, 700px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+
+    color: rgba(220, 240, 224, 0.35);
+}
+
+.final-bottom-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.final-bottom-center i {
+    width: 28px;
+    height: 1px;
+
+    background: rgba(100, 210, 120, 0.5);
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+    .final-football {
+        min-height: 100svh;
+    }
+
+    .final-glow {
+        width: 320px;
+        height: 320px;
+    }
+
+    .final-field {
+        width: 560px;
+        height: 560px;
+        bottom: -150px;
+    }
+
+    .final-field-circle {
+        width: 170px;
+        height: 170px;
+    }
+
+    .final-top {
+        top: 24px;
+        font-size: 8px;
+    }
+
+    .final-label {
+        margin-bottom: 22px;
+        font-size: 8px;
+        letter-spacing: 0.22em;
+    }
+
+    .final-content h2 {
+        font-size: clamp(48px, 15vw, 75px);
+    }
+
+    .final-line {
+        margin: 28px auto 24px;
+    }
+
+    .final-text {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .final-mark {
+        width: 58px;
+        height: 58px;
+        margin-top: 30px;
+    }
+
+    .final-mark span {
+        font-size: 24px;
+    }
+
+    .final-bottom {
+        bottom: 22px;
+        font-size: 7px;
+    }
+}
